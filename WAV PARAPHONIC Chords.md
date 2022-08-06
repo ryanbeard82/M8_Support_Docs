@@ -1,12 +1,13 @@
 # Dirtywave M8 Macrosynth: WAV PARAPHONIC
 
-An exploration of the chords avaialble through the Color parameter values in the Dirtywave M8 as ported form the Mutable Instruments Braids macro oscillator eurorack module.
+An exploration of the chords available through the Color parameter values in the Dirtywave M8's Macrosynth instrument, as ported from the [Mutable Instruments Braids] macro oscillator eurorack module.
 
 ## Source Code
 
-The braids source code is available on GitHub in the [Eurorack modules git repository](https://github.com/pichenettes/eurorack).
+The source code for Braids is available on GitHub in the [Eurorack modules git repository](https://github.com/pichenettes/eurorack).
 
-The Wave Paraphonic code can be found in the [digital_oscilator.cc](https://github.com/pichenettes/eurorack/blob/master/braids/digital_oscillator.cc) file. Specifcally, line 1736 defines the static constant "chords" array as the following:
+The Wave Paraphonic code can be found in the file [digital_oscillator.cc](https://github.com/pichenettes/eurorack/blob/master/braids/digital_oscillator.cc). Specifically, line 1736 defines the static constant "chords" array as the following:
+
 ```c
 static const uint16_t chords[17][3] = {
   { 2, 4, 6 },
@@ -28,15 +29,17 @@ static const uint16_t chords[17][3] = {
   { 4, 4 + 12 SEMI, 12 SEMI },
 };
 ```
+
 ## Testing the Dirtywave M8 Implementation
 
-For testing, I created a new, empty, project file and created a single WAV PARAPHONIC instrument with a repeating C-5 note in a single phrase. I iterated through each of the Color values and documented the chord produced using both audio (listening to the chord) and visual (looking at the keyboard representation) analysis of the output.
-Note that some some values are represented as microtonal increments (noted as "c" for cents). The source code defines a semitone constant with 128 increments:
+For testing, I created a new empty project file and created a single WAV PARAPHONIC instrument with a repeating C-5 note in a single phrase. I iterated through each of the Color values and documented the chord produced using both audio (listening to the chord) and visual (looking at the keyboard representation) analysis of the output.
+
+Note that some some values are represented as microtonal increments (denoted by "c", for cents). The source code defines a semitone constant with 128 increments:
 ```c 
 #define SEMI * 128
 ```
 
-Since a semitone is equal to 100 cents, the source code microtonal values have been divided by 1.28 to produce the resulting cent equivalency in the table below (rounded to the nearest tenth).
+Since a semitone is equal to 100 cents, the source code's microtonal values have been divided by 1.28 to produce the resulting cent equivalency (rounded to the nearest tenth) in the table below:
 
 | Id | Documented Semitone 1 | Documented Semitone 2 | Documented Semitone 3 | Actual Semitone 1 | Actual Semitone 2 | Actual Semitone 3 | Color Range | Chord             | Notes                             |
 |----|------------|------------|------------|------------|------------|------------|-------------|-------------------|-----------------------------------|
@@ -72,3 +75,5 @@ Since a semitone is equal to 100 cents, the source code microtonal values have b
 | 30 | 4          | 7          | 12         |            |            |            |             |                   | Not produced by the M8            |
 | 31 | 4          |12 + 4(3.1c)| 12         |            |            |            |             |                   | Not produced by the M8            |
 | 32 | 4          |12 + 4(3.1c)| 12         |            |            |            |             |                   | Not produced by the M8            |
+
+[Mutable Instruments Braids]: https://mutable-instruments.net/modules/braids/
