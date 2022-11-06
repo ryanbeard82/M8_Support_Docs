@@ -69,9 +69,9 @@ Since a semitone is equal to 100 cents, the source code's microtonal values have
 | 24 |            |            |            | 4          | 7          | 11         | C7          | CM7               | The 11 sounds slightly sharp here |
 | 25 | 5          | 7          | 12         | 5          | 7          | 12         | C8-D6       | Csus4             |                                   |
 | 26 |            |            |            | 3          | 7          | 12         | D7          | Cm                | Not documented in source code     |
-| 27 |            |            |            | 7          | 12         | N/A        | D8-E6       | C5 or Csus        | Not documented in source code     |
-| 28 |            |            |            | 9          | 12         | N/A        | E7          | Am/C              | Not documented in source code     |
-| 29 |            |            |            | 12         | N/A        | N/A        | E8          | Octave            | Not documented in source code     |
+| 27 |            |            |            | 0+         | 7          | 12         | D8-E6       | C5 or Csus        | Microtonal (chorus effect)        |
+| 28 |            |            |            | 0+         | 9          | 12         | E7          | Am/C              | Microtonal (chorus effect)        |
+| 29 |            |            |            | 0+         | 12         | N/A        | E8          | Octave            | Microtonal (chorus effect)        |
 | 30 | 4          | 7          | 12         |            |            |            |             |                   | Not produced by the M8            |
 | 31 | 4          |12 + 4(3.1c)| 12         |            |            |            |             |                   | Not produced by the M8            |
 | 32 | 4          |12 + 4(3.1c)| 12         |            |            |            |             |                   | Not produced by the M8            |
